@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alo Moves — India GTM Strategy</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --black: #0D0D0B;
+    --white: #FAFAF6;
+    --cream: #F2EDE4;
+    --sage: #3D6142;
+    --sage-light: #B8CEB9;
+    --sage-pale: #EBF2EC;
+    --clay: #B05F3C;
+    --clay-light: #F5E1D5;
+    --ink: #1C1C1A;
+    --muted: #6A6560;
+    --border: #DDD8CE;
+    --gold: #8B6914;
+    --gold-light: #F7F0DC;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background: var(--white);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--black);
+    padding: 80px 60px 72px;
+    position: relative; overflow: hidden;
+  }
+  .hero::after {
+    content: '';
+    position: absolute; top: -80px; right: -80px;
+    width: 420px; height: 420px; border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.05);
+  }
+  .hero::before {
+    content: '';
+    position: absolute; bottom: -120px; left: 35%;
+    width: 600px; height: 600px; border-radius: 50%;
+    border: 1px solid rgba(61,97,66,0.2);
+  }
+  .hero-inner { max-width: 860px; margin: 0 auto; position: relative; z-index: 1; }
+  .hero-tag { font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--sage-light); margin-bottom: 20px; font-weight: 600; }
+  .hero h1 { font-family: 'Cormorant Garamond', serif; font-size: clamp(38px, 5.5vw, 62px); line-height: 1.08; font-weight: 600; max-width: 680px; margin-bottom: 20px; color: var(--white); }
+  .hero h1 em { font-style: italic; color: var(--sage-light); }
+  .hero-sub { color: rgba(255,255,255,0.48); font-size: 15px; max-width: 480px; margin-bottom: 32px; }
+
+  .notice-badge {
+    display: inline-flex; align-items: flex-start; gap: 10px;
+    background: rgba(61,97,66,0.15); border: 1px solid rgba(61,97,66,0.3);
+    border-radius: 10px; padding: 12px 16px;
+    font-size: 12px; color: var(--sage-light); max-width: 520px; line-height: 1.5;
+    margin-bottom: 40px;
+  }
+  .notice-badge strong { color: #7FC283; }
+
+  .hero-stats { display: flex; gap: 44px; flex-wrap: wrap; }
+  .hero-stat-val { font-family: 'Cormorant Garamond', serif; font-size: 30px; color: var(--white); font-weight: 600; }
+  .hero-stat-lbl { font-size: 12px; color: rgba(255,255,255,0.38); margin-top: 2px; }
+
+  /* LAYOUT */
+  .container { max-width: 860px; margin: 0 auto; padding: 0 44px; }
+  section { padding: 64px 0; border-bottom: 1px solid var(--border); }
+  section:last-child { border-bottom: none; }
+
+  .section-label { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 10px; font-weight: 600; }
+  h2 { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-weight: 600; margin-bottom: 28px; color: var(--ink); line-height: 1.2; }
+  h3 { font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--ink); }
+  p { color: var(--muted); margin-bottom: 16px; }
+  p:last-child { margin-bottom: 0; }
+
+  /* REASONING */
+  .reasoning {
+    background: var(--gold-light); border: 1px solid #DFC882;
+    border-left: 4px solid var(--gold); border-radius: 0 12px 12px 0;
+    padding: 24px 28px; margin-top: 28px;
+  }
+  .reasoning-tag { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 10px; }
+  .reasoning h3 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+  .reasoning p { font-size: 13px; color: #5C4B10; }
+
+  /* INDIA REALITY CARD */
+  .india-reality {
+    background: var(--black); border-radius: 16px; padding: 36px;
+    margin-bottom: 28px; position: relative; overflow: hidden;
+  }
+  .india-reality::before {
+    content: '';
+    position: absolute; bottom: -40px; right: -40px;
+    width: 200px; height: 200px; border-radius: 50%;
+    background: radial-gradient(circle, rgba(61,97,66,0.3) 0%, transparent 70%);
+  }
+  .india-reality-tag { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: var(--sage-light); margin-bottom: 14px; font-weight: 600; }
+  .india-reality h3 { font-family: 'Cormorant Garamond', serif; font-size: 22px; font-weight: 600; color: var(--white); margin-bottom: 16px; }
+  .india-reality-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .ir-item { background: rgba(255,255,255,0.06); border-radius: 8px; padding: 14px; }
+  .ir-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 5px; }
+  .ir-val { font-size: 13px; color: rgba(255,255,255,0.78); line-height: 1.5; }
+
+  /* METRICS */
+  .metric-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin-bottom: 36px; }
+  .metric-card { background: var(--cream); border-radius: 12px; padding: 20px; }
+  .metric-card .val { font-family: 'Cormorant Garamond', serif; font-size: 28px; color: var(--ink); line-height: 1; margin-bottom: 6px; font-weight: 600; }
+  .metric-card .lbl { font-size: 12px; color: var(--muted); font-weight: 500; }
+
+  /* COMPETITOR */
+  .competitor-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 14px; margin: 24px 0; }
+  .comp-card { border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+  .comp-name { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+  .comp-threat { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 10px; }
+  .comp-threat.high { background: #FEE2E2; color: #DC2626; }
+  .comp-threat.medium { background: #FEF3C7; color: #D97706; }
+  .comp-detail { font-size: 12px; color: var(--muted); }
+
+  /* PERSONA */
+  .persona { display: grid; grid-template-columns: 200px 1fr; gap: 32px; background: var(--sage-pale); border-radius: 16px; padding: 32px; align-items: start; }
+  .persona-avatar { width: 80px; height: 80px; border-radius: 50%; background: var(--sage); display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 30px; color: white; margin-bottom: 14px; }
+  .persona-name { font-size: 17px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+  .persona-title { font-size: 13px; color: var(--sage); font-weight: 500; }
+  .persona-detail { font-size: 13px; color: var(--muted); margin: 3px 0; }
+  .tag-list { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+  .tag { background: white; border: 1px solid var(--sage-light); color: var(--sage); border-radius: 20px; padding: 4px 12px; font-size: 12px; font-weight: 500; }
+  .tag.pain { background: var(--clay-light); border-color: #e0b09A; color: var(--clay); }
+
+  /* POSITIONING */
+  .quote-block { border-left: 3px solid var(--sage); padding: 20px 24px; background: var(--sage-pale); border-radius: 0 12px 12px 0; margin: 24px 0; }
+  .quote-block p { color: var(--ink); font-size: 15px; line-height: 1.65; }
+
+  /* PRICING */
+  .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 16px; }
+  .pricing-card { border: 1px solid var(--border); border-radius: 14px; padding: 24px; position: relative; }
+  .pricing-card.featured { border-color: var(--sage); border-width: 2px; }
+  .featured-badge { position: absolute; top: -12px; left: 50%; transform: translateX(-50%); background: var(--sage); color: white; font-size: 11px; font-weight: 600; padding: 3px 12px; border-radius: 20px; white-space: nowrap; }
+  .price-name { font-size: 11px; color: var(--muted); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; }
+  .price-val { font-family: 'Cormorant Garamond', serif; font-size: 32px; color: var(--ink); font-weight: 600; }
+  .price-period { font-size: 12px; color: var(--muted); margin-bottom: 14px; }
+  .price-note { font-size: 13px; color: var(--sage); font-weight: 500; }
+
+  /* FUNNEL */
+  .funnel { display: flex; flex-direction: column; gap: 4px; }
+  .funnel-step { display: flex; align-items: center; gap: 16px; padding: 16px 20px; border-radius: 10px; background: var(--cream); transition: background 0.2s; }
+  .funnel-step:hover { background: #EAE4D8; }
+  .funnel-icon { width: 38px; height: 38px; border-radius: 50%; background: var(--sage); display: flex; align-items: center; justify-content: center; font-size: 15px; flex-shrink: 0; }
+  .funnel-label { font-weight: 600; font-size: 14px; color: var(--ink); }
+  .funnel-desc { font-size: 13px; color: var(--muted); }
+  .funnel-num { margin-left: auto; font-family: 'Cormorant Garamond', serif; font-size: 22px; color: var(--sage); font-weight: 600; }
+
+  /* CHANNELS */
+  .channel-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px; }
+  .channel-card { border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+  .channel-name { font-size: 14px; font-weight: 600; color: var(--ink); margin-bottom: 8px; }
+  .channel-detail { font-size: 13px; color: var(--muted); }
+  .channel-priority { font-size: 10px; letter-spacing: 1px; text-transform: uppercase; font-weight: 600; padding: 2px 8px; border-radius: 4px; display: inline-block; margin-bottom: 8px; }
+  .priority-high { background: var(--sage-pale); color: var(--sage); }
+  .priority-medium { background: var(--cream); color: var(--muted); }
+
+  /* TIMELINE */
+  .timeline { position: relative; padding-left: 28px; }
+  .timeline::before { content: ''; position: absolute; left: 0; top: 6px; bottom: 6px; width: 1px; background: var(--border); }
+  .tl-item { position: relative; margin-bottom: 36px; }
+  .tl-item::before { content: ''; position: absolute; left: -32px; top: 6px; width: 9px; height: 9px; border-radius: 50%; background: var(--sage); border: 2px solid var(--white); box-shadow: 0 0 0 1px var(--sage); }
+  .tl-phase { font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--sage); font-weight: 600; margin-bottom: 4px; }
+  .tl-title { font-size: 16px; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
+  .tl-kpis { font-size: 13px; color: var(--muted); margin-bottom: 10px; }
+  .activity-list { list-style: none; }
+  .activity-list li { font-size: 13px; color: var(--muted); padding: 4px 0 4px 16px; position: relative; }
+  .activity-list li::before { content: '→'; position: absolute; left: 0; color: var(--sage); font-size: 11px; }
+
+  /* INSIGHT */
+  .insight-box { background: var(--black); color: var(--white); border-radius: 16px; padding: 40px; }
+  .insight-box .label { font-size: 11px; letter-spacing: 2px; text-transform: uppercase; color: var(--sage-light); margin-bottom: 14px; font-weight: 600; }
+  .insight-box h3 { font-family: 'Cormorant Garamond', serif; font-size: 24px; font-weight: 600; color: var(--white); margin-bottom: 14px; }
+  .insight-box p { color: rgba(255,255,255,0.55); font-size: 14px; }
+
+  /* FOOTER */
+  .footer { background: var(--cream); padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer-brand { font-family: 'Cormorant Garamond', serif; font-size: 20px; color: var(--ink); font-weight: 600; }
+  .footer-meta { font-size: 12px; color: var(--muted); }
+
+  @media (max-width: 600px) {
+    .hero { padding: 50px 24px; }
+    .container { padding: 0 24px; }
+    .persona, .india-reality-grid { grid-template-columns: 1fr; }
+    .footer { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">Growth Marketing Project &nbsp;·&nbsp; GTM Case Study</div>
+    <h1>Alo Moves —<br><em>India Entry</em><br>Go-To-Market Strategy</h1>
+    <p class="hero-sub">A market-specific growth strategy for launching a premium yoga app in India — where free content is the real competitor, not rival apps.</p>
+    <div class="notice-badge">
+      📋 <span><strong>Disclosure:</strong> This is a strategic design case study. Funnel metrics and projections are modeled estimates based on consumer app benchmarks — not live campaign data. The goal is to demonstrate structured GTM thinking and India-specific market analysis.</span>
+    </div>
+    <div class="hero-stats">
+      <div><div class="hero-stat-val">$436M</div><div class="hero-stat-lbl">India fitness app market (2024)</div></div>
+      <div><div class="hero-stat-val">19.47%</div><div class="hero-stat-lbl">CAGR through 2033</div></div>
+      <div><div class="hero-stat-val">$2.45B</div><div class="hero-stat-lbl">Projected market size by 2033</div></div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- THE INDIA REALITY -->
+  <section>
+    <div class="section-label">The Real India Context</div>
+    <h2>What makes this market genuinely different</h2>
+
+    <div class="india-reality">
+      <div class="india-reality-tag">🇮🇳 India-Specific Market Dynamics</div>
+      <h3>The competitor isn't Cult.fit. It's free YouTube yoga.</h3>
+      <div class="india-reality-grid">
+        <div class="ir-item">
+          <div class="ir-label">The real competition</div>
+          <div class="ir-val">Channels like Yoga With Adriene, Cult.fit's free content, and thousands of Hindi-language YouTube creators offer unlimited free yoga — and Indians are already using them.</div>
+        </div>
+        <div class="ir-item">
+          <div class="ir-label">The price psychology problem</div>
+          <div class="ir-val">₹999/mo feels expensive when quality free alternatives exist. This is not a pricing problem — it's a value communication problem. The pitch cannot be "great yoga content."</div>
+        </div>
+        <div class="ir-item">
+          <div class="ir-label">Tier 2 city opportunity</div>
+          <div class="ir-val">Delhi and Mumbai are the obvious entry points, but Tier 2 cities (Pune, Hyderabad, Bengaluru) have high smartphone penetration and lower competition from offline studios — potentially better unit economics.</div>
+        </div>
+        <div class="ir-item">
+          <div class="ir-label">Language nuance</div>
+          <div class="ir-val">English-only UX limits reach even in urban markets. Hindi subtitles or a Hindi instructor track for select programs would expand the addressable audience significantly.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reasoning">
+      <div class="reasoning-tag">My Reasoning</div>
+      <h3>Why I reframed the competitive set</h3>
+      <p>Most GTM strategies for India pitch against other paid apps. That's the wrong comparison set. If the user is choosing between Alo Moves and Cult.fit, that's a product comparison. But if they're choosing between Alo Moves and a free YouTube playlist they already love — that's a fundamentally different conversion challenge. The strategy has to answer: "Why pay when I can get yoga for free?" The answer is consistency, not content. That reframe changes everything from pricing to messaging to onboarding.</p>
+    </div>
+  </section>
+
+  <!-- MARKET OPPORTUNITY -->
+  <section>
+    <div class="section-label">Market Opportunity</div>
+    <h2>A high-growth market primed for structure</h2>
+    <p>India's fitness app market is driven by three converging behavioral shifts among urban consumers — post-pandemic home workout normalisation, rising mental health awareness, and growing expectation of personalised routines.</p>
+    <div class="metric-row">
+      <div class="metric-card"><div class="val">↑ Home</div><div class="lbl">Workouts normalised post-pandemic</div></div>
+      <div class="metric-card"><div class="val">↑ Mental</div><div class="lbl">Wellness demand driving meditation & yoga</div></div>
+      <div class="metric-card"><div class="val">18–35</div><div class="lbl">Core segment: urban millennials & Gen Z</div></div>
+      <div class="metric-card"><div class="val">Tier 1+2</div><div class="lbl">Entry in Delhi/Mumbai, expand to Bengaluru/Pune</div></div>
+    </div>
+
+    <!-- COMPETITIVE LANDSCAPE -->
+    <h3 style="margin-bottom: 16px;">Competitive landscape — honest view</h3>
+    <div class="competitor-grid">
+      <div class="comp-card">
+        <div class="comp-name">Free YouTube Yoga</div>
+        <div class="comp-threat high">Highest Threat</div>
+        <div class="comp-detail">Unlimited free content, beloved creators, zero friction. The primary objection to overcome — not another app.</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-name">Cult.fit</div>
+        <div class="comp-threat high">High Threat</div>
+        <div class="comp-detail">Strong Indian brand recognition, hybrid online/offline model, freemium entry. Well-established trust.</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-name">Nike Training Club</div>
+        <div class="comp-threat medium">Medium Threat</div>
+        <div class="comp-detail">Free, global brand, but fitness-focused not wellness/yoga. Less direct overlap with Alo Moves' positioning.</div>
+      </div>
+      <div class="comp-card">
+        <div class="comp-name">Headspace / Calm</div>
+        <div class="comp-threat medium">Adjacent</div>
+        <div class="comp-detail">Mindfulness-led, not yoga. Overlap in target persona (stressed professionals) but not direct product competition.</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PERSONA -->
+  <section>
+    <div class="section-label">Target Audience</div>
+    <h2>Understanding the user we're designing for</h2>
+    <div class="persona">
+      <div>
+        <div class="persona-avatar">P</div>
+        <div class="persona-name">Priya, 26</div>
+        <div class="persona-title">Product Manager, Bengaluru</div>
+        <div style="margin-top: 12px;">
+          <div class="persona-detail">💰 ₹12–18 LPA income</div>
+          <div class="persona-detail">📱 Active on Instagram & YouTube</div>
+          <div class="persona-detail">🧘 Interested in yoga, mindfulness, self-care</div>
+          <div class="persona-detail">📺 Already follows free YouTube yoga</div>
+        </div>
+      </div>
+      <div>
+        <h3>Goals</h3>
+        <div class="tag-list" style="margin-bottom: 20px;">
+          <span class="tag">Build consistent routine</span>
+          <span class="tag">Reduce work stress</span>
+          <span class="tag">Structure over browsing</span>
+          <span class="tag">Visible progress</span>
+        </div>
+        <h3>Pain Points</h3>
+        <div class="tag-list" style="margin-bottom: 16px;">
+          <span class="tag pain">Inconsistency — starts and stops</span>
+          <span class="tag pain">Overwhelmed by content choices</span>
+          <span class="tag pain">No sense of progression</span>
+          <span class="tag pain">Feels guilty paying for what's free</span>
+        </div>
+        <p style="font-size: 13px;">Priya already has access to free yoga content — she doesn't need more. She needs a system that keeps her accountable and makes showing up feel effortless. <strong>That's the pitch.</strong></p>
+      </div>
+    </div>
+
+    <div class="reasoning">
+      <div class="reasoning-tag">My Reasoning</div>
+      <h3>Why "guilty about paying" is the most important pain point</h3>
+      <p>Priya's biggest barrier isn't price — it's justifying the price to herself when free alternatives exist. The marketing messaging must preemptively answer this: "You've tried free. You know it doesn't stick." The conversion story is about the cost of inconsistency, not the cost of the subscription. Once that reframe lands, ₹999/month feels reasonable.</p>
+    </div>
+  </section>
+
+  <!-- POSITIONING -->
+  <section>
+    <div class="section-label">Positioning Strategy</div>
+    <h2>Not more content. A system for consistency.</h2>
+    <p>Most fitness apps in India compete on content volume. Free YouTube channels have already won that battle. Alo Moves' differentiator is its structured, program-based design — built for habit formation, not casual browsing.</p>
+    <div class="quote-block">
+      <p><strong>Positioning Statement:</strong> For urban Indian millennials and Gen Z who value mindfulness but struggle with consistency, Alo Moves offers structured, expert-led yoga programs designed to build lasting habits. Unlike free content (which is infinite but formless), Alo Moves gives you a system — week-by-week progression, accountability, and a clear sense of progress.</p>
+    </div>
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin-top: 24px;">
+      <div class="metric-card"><div class="val" style="font-size: 18px;">Structured</div><div class="lbl">Programs — not playlists. Week-by-week progression keeps users on track.</div></div>
+      <div class="metric-card"><div class="val" style="font-size: 18px;">System</div><div class="lbl">The pitch answers "why pay when free exists" — because free doesn't create habits.</div></div>
+      <div class="metric-card"><div class="val" style="font-size: 18px;">Stress-first</div><div class="lbl">Mental health framing is uniquely resonant with India's stressed urban professionals.</div></div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section>
+    <div class="section-label">Pricing Strategy</div>
+    <h2>Localised pricing anchored to value, not cost</h2>
+    <p style="margin-bottom: 28px;">Pricing must feel justifiable against free alternatives. The annual plan does the most work here — it reframes the decision from "₹999/month vs free" to "₹500/month for a habit system."</p>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="price-name">Free Trial</div>
+        <div class="price-val">₹0</div>
+        <div class="price-period">7 days — full access</div>
+        <div class="price-note">No credit card required. Critical for brand-unfamiliar market.</div>
+      </div>
+      <div class="pricing-card featured">
+        <div class="featured-badge">Best Value</div>
+        <div class="price-name">Annual Plan</div>
+        <div class="price-val">₹5,999</div>
+        <div class="price-period">per year (~₹500/mo)</div>
+        <div class="price-note">Push this hard. Reframes monthly cost and dramatically improves LTV.</div>
+      </div>
+      <div class="pricing-card">
+        <div class="price-name">Monthly Plan</div>
+        <div class="price-val">₹999</div>
+        <div class="price-period">per month</div>
+        <div class="price-note">Entry point for the commitment-averse. Upsell path to annual.</div>
+      </div>
+    </div>
+    <div class="reasoning" style="margin-top: 20px;">
+      <div class="reasoning-tag">My Reasoning</div>
+      <h3>Why the annual plan is the most important lever in India</h3>
+      <p>At ₹999/month, every monthly renewal is a fresh decision — "should I keep paying?" The annual plan eliminates that decision. At ₹500/month, the comparison to free content becomes much easier to win. I'd push the annual plan aggressively at the end of the 7-day trial, when the user has experienced value but hasn't yet formed the "cancel" habit.</p>
+    </div>
+  </section>
+
+  <!-- FUNNEL -->
+  <section>
+    <div class="section-label">Growth Funnel</div>
+    <h2>Full-funnel model — Month 1 projection</h2>
+    <p style="margin-bottom: 24px;">Simulated launch targeting Delhi/Mumbai/Bengaluru via paid + organic. Numbers are modeled estimates, not live data.</p>
+    <div class="funnel">
+      <div class="funnel-step">
+        <div class="funnel-icon">📣</div>
+        <div><div class="funnel-label">Awareness</div><div class="funnel-desc">Instagram Reels, YouTube, wellness influencer partnerships</div></div>
+        <div class="funnel-num">~50K reach</div>
+      </div>
+      <div class="funnel-step">
+        <div class="funnel-icon">📲</div>
+        <div><div class="funnel-label">Acquisition</div><div class="funnel-desc">App installs via paid ads + ASO (Hindi + English keywords)</div></div>
+        <div class="funnel-num">5,000 installs</div>
+      </div>
+      <div class="funnel-step">
+        <div class="funnel-icon">⚡</div>
+        <div><div class="funnel-label">Activation</div><div class="funnel-desc">Free trial signups (40% install → trial rate)</div></div>
+        <div class="funnel-num">2,000 trials</div>
+      </div>
+      <div class="funnel-step">
+        <div class="funnel-icon">🔄</div>
+        <div><div class="funnel-label">Retention</div><div class="funnel-desc">7-day retention via streak mechanics + daily programs</div></div>
+        <div class="funnel-num">30% D7 retention</div>
+      </div>
+      <div class="funnel-step">
+        <div class="funnel-icon">💰</div>
+        <div><div class="funnel-label">Revenue</div><div class="funnel-desc">Trial → paid conversion (20% is aggressive; requires strong activation)</div></div>
+        <div class="funnel-num">400 paid users</div>
+      </div>
+    </div>
+    <div class="reasoning">
+      <div class="reasoning-tag">My Reasoning</div>
+      <h3>Why 20% trial-to-paid is the hardest number and what I'd do about it</h3>
+      <p>20% is aggressive for a brand-new market entrant, especially against a free-content baseline. I'd expect 10–15% more realistically in Month 1. To move toward 20%, the activation experience in the first 3 sessions is everything — users need to feel visible, measurable progress before the trial ends. I'd invest in a strong day-1 onboarding flow: "Tell us your goal → Here's your 7-day program → Session 1 starts now." Reducing time-to-first-value is the highest-leverage optimisation in the funnel.</p>
+    </div>
+  </section>
+
+  <!-- CHANNELS -->
+  <section>
+    <div class="section-label">Channel Strategy</div>
+    <h2>Where we show up — and why</h2>
+    <div class="channel-grid">
+      <div class="channel-card">
+        <div class="channel-priority priority-high">Priority: High</div>
+        <div class="channel-name">Instagram Reels</div>
+        <div class="channel-detail">Short-form yoga/wellness content. Primary discovery channel for 18–28 segment. Partner with mid-tier creators (50K–500K) for authentic reach over mega-influencer deals.</div>
+      </div>
+      <div class="channel-card">
+        <div class="channel-priority priority-high">Priority: High</div>
+        <div class="channel-name">YouTube (Long + Shorts)</div>
+        <div class="channel-detail">Free sample sessions build trust and capture high-intent search. "10-min morning yoga for stress" targets the exact moment Priya turns to YouTube — and redirects her to the app.</div>
+      </div>
+      <div class="channel-card">
+        <div class="channel-priority priority-high">Priority: High</div>
+        <div class="channel-name">ASO — Hindi + English</div>
+        <div class="channel-detail">Localised app store keywords in both languages. Hindi search volume is underserved by current wellness apps — significant low-competition opportunity for organic installs.</div>
+      </div>
+      <div class="channel-card">
+        <div class="channel-priority priority-medium">Priority: Medium</div>
+        <div class="channel-name">Google + YouTube Ads</div>
+        <div class="channel-detail">Target: "yoga app India", "meditation for stress", "morning yoga routine". Retarget website visitors with trial CTA emphasising the free 7-day window.</div>
+      </div>
+      <div class="channel-card">
+        <div class="channel-priority priority-medium">Priority: Medium</div>
+        <div class="channel-name">Content Marketing (SEO)</div>
+        <div class="channel-detail">Blog targeting "workplace stress India", "yoga for beginners", "morning routine for professionals". Long-term organic acquisition engine — compound ROI over 6–12 months.</div>
+      </div>
+      <div class="channel-card">
+        <div class="channel-priority priority-medium">Priority: Test</div>
+        <div class="channel-name">Corporate Wellness Partnerships</div>
+        <div class="channel-detail">Underused channel. Partner with Bengaluru/Delhi tech companies for subsidised employee access. B2B2C route into the exact target persona at scale with no paid CAC.</div>
+      </div>
+    </div>
+    <div class="reasoning">
+      <div class="reasoning-tag">My Reasoning</div>
+      <h3>Why I added corporate wellness as a channel — and why it's underrated</h3>
+      <p>The target user (Priya, stressed urban professional) is sitting in an office right now. Corporate wellness programs are a direct channel to her at zero paid CAC — the company subsidises or recommends the app. In India, tech companies especially in Bengaluru, Hyderabad, and Gurugram actively look for mental wellness benefits post-pandemic. A B2B2C channel could deliver 10× better CAC than paid social if executed early.</p>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section>
+    <div class="section-label">Execution Plan</div>
+    <h2>Phased GTM timeline</h2>
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-phase">Phase 1 — Months 1–2</div>
+        <div class="tl-title">Pre-Launch: Build credibility before asking for money</div>
+        <div class="tl-kpis">KPIs: Waitlist signups, content engagement, organic reach</div>
+        <ul class="activity-list">
+          <li>Publish YouTube series: "30-day stress reset" — free, full sessions to build trust</li>
+          <li>SEO blogs targeting "mental wellness for working professionals India"</li>
+          <li>Instagram Reels: program preview content + instructor spotlights</li>
+          <li>Waitlist with early-access incentive: extended 14-day trial (vs standard 7)</li>
+          <li>Initiate conversations with 3–5 Bengaluru tech companies for corporate pilots</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-phase">Phase 2 — Months 2–3</div>
+        <div class="tl-title">Launch: Drive installs and trial activations</div>
+        <div class="tl-kpis">KPIs: App installs, trial signups, Day-7 activation rate, session completion</div>
+        <ul class="activity-list">
+          <li>Launch Google + YouTube paid campaigns (Hindi + English ad copy)</li>
+          <li>Partner with 5–8 mid-tier wellness influencers for launch push</li>
+          <li>PR outreach: Femina, Vogue India, YourStory, Healthshots</li>
+          <li>ASO optimisation with Hindi keyword set live on Day 1</li>
+          <li>Activate waitlist with personal launch email — urgency + exclusivity framing</li>
+        </ul>
+      </div>
+      <div class="tl-item">
+        <div class="tl-phase">Phase 3 — Months 3–5</div>
+        <div class="tl-title">Post-Launch: Optimise the trial-to-paid conversion</div>
+        <div class="tl-kpis">KPIs: Trial-to-paid CVR, 30-day retention, CAC by channel, annual plan uptake</div>
+        <ul class="activity-list">
+          <li>Scale best-performing ad creatives, pause underperformers ruthlessly</li>
+          <li>Push notifications and streak mechanics to reduce trial churn</li>
+          <li>Annual plan upsell: triggered email on Day 5 of trial (before expiry anxiety kicks in)</li>
+          <li>Gather user feedback → improve onboarding flow → test new D1 experience</li>
+          <li>Launch referral: "Gift a week of Alo Moves" — shareable, low-friction</li>
+          <li>Evaluate corporate wellness pilot results and decide B2B2C investment level</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- INSIGHT -->
+  <section>
+    <div class="section-label">Strategic Thesis</div>
+    <h2>The core hypothesis</h2>
+    <div class="insight-box">
+      <div class="label">What I believe about this market</div>
+      <h3>Consistency is the product. Free content already lost the battle for Priya's attention — Alo Moves has to win the battle for her habit.</h3>
+      <p>The Indian wellness market is saturated with free, high-quality content. The user's problem is not access — it's follow-through. Every retention mechanic (streaks, guided programs, daily reminders, week-by-week progression) is a solution to the consistency problem. The brand's job is to make that frame land clearly before the first session, not after the trial ends. If we nail the first 3 days, we win. If we don't, no amount of paid acquisition will fix the churn.</p>
+    </div>
+    <div class="reasoning" style="margin-top: 20px;">
+      <div class="reasoning-tag">What I'd Do Differently If I Were Running This</div>
+      <h3>I'd launch in Bengaluru first, not Delhi or Mumbai</h3>
+      <p>Bengaluru has the highest concentration of English-speaking, salaried tech professionals — Alo Moves' exact persona — with more disposable income and lower competition from offline yoga studios than Delhi. It's also the corporate wellness hub. A focused Bengaluru-first launch lets you validate the GTM model before scaling spend to more expensive markets. City-level launches also generate local word-of-mouth that pan-India campaigns don't.</p>
+    </div>
+  </section>
+
+</div>
+
+<div class="footer">
+  <div class="footer-brand">Alo Moves — India GTM Strategy</div>
+  <div class="footer-meta">Strategic design project &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Metrics are modeled projections</div>
+</div>
+
+</body>
+</html>
