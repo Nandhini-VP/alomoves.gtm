@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sparq — Growth Marketing Case Study</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Epilogue:wght@300;400;500;600&display=swap');
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #F9F7F4;
+    --white: #FFFFFF;
+    --ink: #0F0E0C;
+    --muted: #6E6A63;
+    --border: #E3DFD8;
+    --accent: #D4500A;
+    --accent-light: #FDF0EA;
+    --accent-mid: #F4C4A8;
+    --gold: #B58D3D;
+    --gold-light: #FBF5E6;
+    --green: #2A6B4A;
+    --green-light: #E8F5EE;
+    --blue: #1A3F7A;
+    --blue-light: #EAF0FB;
+  }
+
+  body {
+    font-family: 'Epilogue', sans-serif;
+    background: var(--bg);
+    color: var(--ink);
+    font-size: 15px;
+    line-height: 1.75;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--ink);
+    padding: 80px 60px 70px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -80px; right: -80px;
+    width: 400px; height: 400px;
+    border-radius: 50%;
+    border: 1px solid rgba(212,80,10,0.2);
+  }
+  .hero::after {
+    content: '';
+    position: absolute;
+    bottom: -120px; left: 30%;
+    width: 600px; height: 600px;
+    border-radius: 50%;
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+  .hero-inner { max-width: 960px; margin: 0 auto; display: grid; grid-template-columns: 1fr 260px; gap: 60px; align-items: end; position: relative; z-index: 1; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 11px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--accent); margin-bottom: 28px; font-weight: 600;
+  }
+  .hero-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--accent); }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(38px, 5vw, 60px);
+    font-weight: 900;
+    color: white;
+    line-height: 1.05;
+    margin-bottom: 20px;
+    letter-spacing: -1px;
+  }
+  .hero h1 em { font-style: italic; color: #F4A272; }
+  .hero-sub { color: rgba(255,255,255,0.45); font-size: 14px; max-width: 420px; line-height: 1.7; }
+
+  .notice-badge {
+    margin-top: 28px;
+    display: inline-flex; align-items: flex-start; gap: 10px;
+    background: rgba(212,80,10,0.12);
+    border: 1px solid rgba(212,80,10,0.3);
+    border-radius: 10px;
+    padding: 12px 16px;
+    font-size: 12px;
+    color: #F4A272;
+    max-width: 440px;
+    line-height: 1.5;
+  }
+  .notice-badge strong { color: var(--accent); }
+
+  .hero-side {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.09);
+    border-radius: 16px;
+    padding: 26px;
+  }
+  .hero-side-label { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 18px; font-weight: 500; }
+  .proof-item { padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,0.07); }
+  .proof-item:last-child { border-bottom: none; }
+  .proof-val { font-family: 'Playfair Display', serif; font-size: 24px; font-weight: 700; color: white; }
+  .proof-lbl { font-size: 12px; color: rgba(255,255,255,0.38); margin-top: 2px; }
+
+  /* LAYOUT */
+  .container { max-width: 960px; margin: 0 auto; padding: 0 44px; }
+  section { padding: 60px 0; border-bottom: 1px solid var(--border); }
+  section:last-child { border-bottom: none; }
+
+  .section-tag {
+    display: inline-block;
+    font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase;
+    color: var(--accent); font-weight: 600; margin-bottom: 10px;
+  }
+  h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 28px; font-weight: 700;
+    letter-spacing: -0.3px; margin-bottom: 28px;
+    color: var(--ink);
+  }
+  h3 { font-size: 14px; font-weight: 600; margin-bottom: 8px; color: var(--ink); }
+  p { color: var(--muted); margin-bottom: 14px; }
+  p:last-child { margin-bottom: 0; }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+  .three-col { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+  /* CARDS */
+  .card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
+  .card-accent { background: var(--accent-light); border: 1px solid var(--accent-mid); border-radius: 12px; padding: 22px; }
+
+  /* PLG HERO FEATURE */
+  .plg-hero {
+    background: var(--ink);
+    border-radius: 16px;
+    padding: 36px;
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+  }
+  .plg-hero::before {
+    content: '';
+    position: absolute; top: -40px; right: -40px;
+    width: 200px; height: 200px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(212,80,10,0.25) 0%, transparent 70%);
+  }
+  .plg-hero-tag { font-size: 10px; letter-spacing: 2.5px; text-transform: uppercase; color: #F4A272; margin-bottom: 14px; font-weight: 600; }
+  .plg-hero h3 { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; color: white; margin-bottom: 12px; }
+  .plg-hero p { color: rgba(255,255,255,0.55); font-size: 13px; }
+  .score-badge {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: rgba(212,80,10,0.15); border: 1px solid rgba(212,80,10,0.3);
+    border-radius: 50px; padding: 8px 18px; margin: 16px 0;
+    font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; color: #F4A272;
+  }
+  .plg-why { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 16px; }
+  .plg-why-item { background: rgba(255,255,255,0.06); border-radius: 8px; padding: 12px 14px; }
+  .plg-why-item .label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: rgba(255,255,255,0.3); margin-bottom: 4px; }
+  .plg-why-item .val { font-size: 13px; color: rgba(255,255,255,0.8); }
+
+  /* FUNNEL */
+  .funnel-grid { display: flex; flex-direction: column; gap: 4px; }
+  .funnel-row {
+    display: grid; grid-template-columns: 110px 1fr auto;
+    gap: 16px; align-items: center;
+    background: var(--white); border: 1px solid var(--border);
+    border-radius: 10px; padding: 16px 20px;
+    transition: border-color 0.2s;
+  }
+  .funnel-row:hover { border-color: var(--accent); }
+  .funnel-stage { font-size: 11px; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; }
+  .funnel-desc { font-size: 13px; color: var(--muted); }
+  .funnel-metric { font-family: 'Playfair Display', serif; font-size: 18px; font-weight: 700; text-align: right; white-space: nowrap; }
+  .bar-wrap { height: 3px; background: var(--border); border-radius: 4px; margin-top: 6px; }
+  .bar-fill { height: 3px; border-radius: 4px; }
+
+  /* REASONING BOX */
+  .reasoning {
+    background: var(--gold-light);
+    border: 1px solid #E8D5A0;
+    border-left: 4px solid var(--gold);
+    border-radius: 0 12px 12px 0;
+    padding: 24px 28px;
+    margin-top: 28px;
+  }
+  .reasoning-tag { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); font-weight: 600; margin-bottom: 10px; }
+  .reasoning h3 { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 10px; }
+  .reasoning p { font-size: 13px; color: #6B5D30; }
+
+  /* A/B */
+  .ab-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .ab-card { border: 1px solid var(--border); border-radius: 12px; padding: 22px; position: relative; }
+  .ab-card.winner { border-color: var(--green); border-width: 2px; }
+  .ab-badge { position: absolute; top: -10px; left: 16px; background: var(--green); color: white; font-size: 10px; font-weight: 600; padding: 2px 10px; border-radius: 10px; letter-spacing: 0.5px; }
+  .ab-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+  .ab-headline { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 12px; }
+  .ab-stat { font-family: 'Playfair Display', serif; font-size: 22px; font-weight: 700; }
+
+  /* IMPACT ROW */
+  .impact-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1px; background: var(--border); border-radius: 12px; overflow: hidden; margin-top: 24px; }
+  .impact-cell { background: var(--white); padding: 20px; }
+  .impact-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; font-weight: 600; }
+  .impact-text { font-size: 14px; color: var(--ink); font-weight: 500; }
+
+  /* EMAIL */
+  .email-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-bottom: 10px; }
+  .email-header { background: var(--bg); padding: 12px 16px; border-bottom: 1px solid var(--border); font-size: 11px; color: var(--muted); }
+  .email-header strong { color: var(--ink); font-size: 12px; }
+  .email-body { padding: 16px; font-size: 13px; color: var(--muted); }
+
+  /* METRICS */
+  .metrics-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 12px; margin-bottom: 28px; }
+  .metric-tile { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 18px; text-align: center; }
+  .metric-tile .v { font-family: 'Playfair Display', serif; font-size: 26px; font-weight: 700; color: var(--accent); }
+  .metric-tile .l { font-size: 11px; color: var(--muted); margin-top: 4px; }
+
+  /* TOOLS */
+  .tool-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 12px; }
+  .tool-card { background: var(--white); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+  .tool-name { font-size: 13px; font-weight: 600; color: var(--ink); }
+  .tool-use { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+  /* JOURNEY */
+  .journey { display: flex; align-items: center; overflow-x: auto; padding: 8px 0; gap: 0; }
+  .journey-step { display: flex; flex-direction: column; align-items: center; min-width: 100px; gap: 8px; }
+  .journey-icon { width: 46px; height: 46px; border-radius: 50%; background: var(--accent-light); border: 2px solid var(--accent-mid); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .journey-label { font-size: 11px; color: var(--muted); text-align: center; font-weight: 500; }
+  .journey-arrow { color: var(--border); font-size: 22px; margin: 0 -4px; padding-bottom: 22px; flex-shrink: 0; }
+
+  /* KW */
+  .kw-list { display: flex; flex-wrap: wrap; gap: 8px; }
+  .kw { background: var(--blue-light); color: var(--blue); border-radius: 6px; padding: 5px 12px; font-size: 12px; font-weight: 500; }
+
+  /* LEARNINGS */
+  .learning-card { background: var(--white); border: 1px solid var(--border); border-radius: 12px; padding: 22px; }
+  .learning-num { font-family: 'Playfair Display', serif; font-size: 40px; font-weight: 900; color: var(--border); line-height: 1; margin-bottom: 8px; }
+
+  /* LP MOCKUP */
+  .lp-mockup { background: var(--white); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+  .lp-bar { background: #F1F0EC; padding: 10px 16px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid var(--border); }
+  .lp-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .lp-url { background: white; border-radius: 6px; font-size: 11px; color: var(--muted); padding: 4px 12px; flex: 1; border: 1px solid var(--border); }
+  .lp-body { padding: 28px 24px; }
+  .lp-hero-tag { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 8px; font-weight: 600; }
+  .lp-headline { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: var(--ink); margin-bottom: 8px; line-height: 1.3; }
+  .lp-sub { font-size: 12px; color: var(--muted); margin-bottom: 16px; }
+  .lp-cta { background: var(--ink); color: white; font-size: 12px; font-weight: 600; border-radius: 6px; padding: 10px 20px; display: inline-block; margin-bottom: 20px; }
+  .lp-proof { display: flex; gap: 16px; flex-wrap: wrap; }
+  .lp-proof-item { font-size: 11px; color: var(--muted); }
+  .lp-proof-item strong { color: var(--ink); }
+
+  /* FOOTER */
+  .footer { background: var(--ink); padding: 38px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; }
+  .footer-brand { font-family: 'Playfair Display', serif; font-size: 20px; font-weight: 700; color: white; }
+  .footer-meta { font-size: 12px; color: rgba(255,255,255,0.3); }
+
+  @media (max-width: 700px) {
+    .hero { padding: 48px 24px; }
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-side { display: none; }
+    .container { padding: 0 24px; }
+    .two-col, .three-col, .ab-grid, .impact-row, .plg-why { grid-template-columns: 1fr; }
+    .footer { padding: 32px 24px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="hero-eyebrow"><span class="hero-dot"></span> Growth Marketing Case Study</div>
+      <h1>Sparq —<br><em>Full-Funnel</em><br>Growth Strategy</h1>
+      <p class="hero-sub">Designing a scalable acquisition, activation, and referral system for a community-driven startup idea validation platform.</p>
+      <div class="notice-badge">
+        📋 <span><strong>Disclosure:</strong> This is a strategic design case study. All metrics are projections modeled on real SaaS/consumer app benchmarks — not live campaign data. The goal is to demonstrate structured growth thinking, funnel design, and lever prioritisation.</span>
+      </div>
+    </div>
+    <div class="hero-side">
+      <div class="hero-side-label">Projected Month 1 Model</div>
+      <div class="proof-item">
+        <div class="proof-val">1,000+</div>
+        <div class="proof-lbl">Ideas submitted</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-val">40%</div>
+        <div class="proof-lbl">Visitor-to-signup rate</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-val">15%</div>
+        <div class="proof-lbl">Referral rate (target)</div>
+      </div>
+      <div class="proof-item">
+        <div class="proof-val">₹50</div>
+        <div class="proof-lbl">Target CAC</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- CORE INSIGHT / PLG FEATURE -->
+  <section>
+    <div class="section-tag">Core Growth Lever</div>
+    <h2>The referral mechanic is built into the product</h2>
+
+    <div class="plg-hero">
+      <div class="plg-hero-tag">⚡ Product-Led Growth Insight</div>
+      <h3>"My idea scored 82/100 — built on Sparq 🚀"</h3>
+      <p>Most referral programs are bolted on. This one is embedded in the core product experience. When a user receives a score, they feel pride — and pride is a distribution mechanism.</p>
+      <div class="score-badge">🏆 &nbsp; Idea Score: 82 / 100</div>
+      <div class="plg-why">
+        <div class="plg-why-item">
+          <div class="label">Why it works</div>
+          <div class="val">The score is emotionally charged — users want to share wins and challenge friends to beat them.</div>
+        </div>
+        <div class="plg-why-item">
+          <div class="label">The loop</div>
+          <div class="val">Share → friend sees score → submits their own idea → new signup. Zero ad spend required.</div>
+        </div>
+        <div class="plg-why-item">
+          <div class="label">Why I prioritised this</div>
+          <div class="val">In a community platform, viral loops outperform paid acquisition on a per-user basis. The best referral is one users want to make.</div>
+        </div>
+        <div class="plg-why-item">
+          <div class="label">What I'd test next</div>
+          <div class="val">Leaderboard rankings as shareable cards — moving from individual scores to competitive social proof.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="reasoning">
+      <div class="reasoning-tag">My Reasoning</div>
+      <h3>Why activation was chosen over acquisition as the primary lever</h3>
+      <p>Most early-stage platforms over-invest in top-of-funnel traffic before fixing the activation experience. For Sparq, a user who submits their first idea is estimated to be 3× more likely to return than one who only browses. Improving activation rate from 40% → 55% would generate more retained users than doubling traffic at the same acquisition cost. I prioritised activation first, referral second, and paid acquisition third — the inverse of the instinct most teams have.</p>
+    </div>
+  </section>
+
+  <!-- PROBLEM & SOLUTION -->
+  <section>
+    <div class="section-tag">Problem & Solution</div>
+    <h2>Founders validate ideas late — or not at all</h2>
+    <div class="two-col">
+      <div>
+        <p>Early-stage founders frequently invest weeks or months into an idea before testing whether it resonates. By the time they get feedback, the cost of pivoting is high and motivation is depleted.</p>
+        <p>Sparq solves this by giving founders a community-driven validation loop in minutes — not months. Submit an idea, get rated by real builders, iterate.</p>
+      </div>
+      <div class="card-accent">
+        <h3 style="color: var(--accent);">The Core Insight</h3>
+        <p style="color: #7A3010; font-size: 13px;">Validation is most valuable before building — but most founders validate too late. Sparq moves feedback to the earliest possible stage: ideation, not post-launch.</p>
+        <div style="margin-top: 14px; font-size: 13px; color: var(--accent); font-weight: 600;">Target: aspiring founders · students · early-stage builders</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- LANDING PAGE -->
+  <section>
+    <div class="section-tag">Acquisition</div>
+    <h2>A landing page built around one action</h2>
+    <p style="margin-bottom: 24px;">Every element on the page was designed to reduce friction and increase confidence before the CTA click. One action. One goal.</p>
+    <div class="two-col" style="align-items: start;">
+      <div class="lp-mockup">
+        <div class="lp-bar">
+          <div class="lp-dot" style="background:#ff5f57"></div>
+          <div class="lp-dot" style="background:#febc2e"></div>
+          <div class="lp-dot" style="background:#28c840"></div>
+          <div class="lp-url">sparq.com</div>
+        </div>
+        <div class="lp-body">
+          <div class="lp-hero-tag">Free &nbsp;·&nbsp; No credit card needed</div>
+          <div class="lp-headline">Test your startup idea before you build.</div>
+          <div class="lp-sub">Get real feedback from a community of builders in minutes — not months.</div>
+          <div class="lp-cta">Submit Your Idea →</div>
+          <div class="lp-proof">
+            <div class="lp-proof-item"><strong>1,000+</strong> ideas submitted</div>
+            <div class="lp-proof-item"><strong>500+</strong> active builders</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom: 12px;">
+          <h3>Why this headline won the A/B test</h3>
+          <p style="font-size: 13px;">The winning headline — "Test your startup idea before you build" — speaks to a specific fear: wasted effort. It outperformed "Validate your idea in minutes" (~18% vs ~10% CVR) because it addressed what the user is actually afraid of, not just what the product does.</p>
+        </div>
+        <div class="card" style="margin-bottom: 12px;">
+          <h3>Social proof below the CTA, not above</h3>
+          <p style="font-size: 13px;">Numbers appear after the headline and CTA — not before. This avoids opening with skepticism-triggering claims and lets the hook land first.</p>
+        </div>
+        <div class="card">
+          <h3>CTA copy: "Submit Your Idea" not "Sign Up"</h3>
+          <p style="font-size: 13px;">Users don't want to sign up — they want to validate their idea. Naming the action they want removes a layer of mental friction at the most critical moment.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FUNNEL -->
+  <section>
+    <div class="section-tag">Growth Funnel</div>
+    <h2>AARRR framework — projected Month 1</h2>
+    <p style="margin-bottom: 24px;">Each funnel stage was designed with a specific mechanic to move users forward. Numbers are modeled projections based on typical consumer app benchmarks.</p>
+    <div class="funnel-grid">
+      <div class="funnel-row">
+        <div class="funnel-stage" style="color: #7C3AED;">Awareness</div>
+        <div>
+          <div class="funnel-desc">LinkedIn content, Twitter/X threads, Meta Ads targeting startup audience</div>
+          <div class="bar-wrap"><div class="bar-fill" style="width: 100%; background: #7C3AED;"></div></div>
+        </div>
+        <div class="funnel-metric" style="color: #7C3AED;">1,000 visitors</div>
+      </div>
+      <div class="funnel-row">
+        <div class="funnel-stage" style="color: var(--blue);">Acquisition</div>
+        <div>
+          <div class="funnel-desc">Conversion-optimised landing page + SEO blog targeting high-intent keywords</div>
+          <div class="bar-wrap"><div class="bar-fill" style="width: 40%; background: var(--blue);"></div></div>
+        </div>
+        <div class="funnel-metric" style="color: var(--blue);">400 signups (40%)</div>
+      </div>
+      <div class="funnel-row">
+        <div class="funnel-stage" style="color: var(--gold);">Activation</div>
+        <div>
+          <div class="funnel-desc">Key action: first idea submission (low friction, immediate community response)</div>
+          <div class="bar-wrap"><div class="bar-fill" style="width: 50%; background: var(--gold);"></div></div>
+        </div>
+        <div class="funnel-metric" style="color: var(--gold);">200 submissions (50%)</div>
+      </div>
+      <div class="funnel-row">
+        <div class="funnel-stage" style="color: var(--green);">Retention</div>
+        <div>
+          <div class="funnel-desc">Trigger-based email notifications + weekly leaderboard creates habit loop</div>
+          <div class="bar-wrap"><div class="bar-fill" style="width: 30%; background: var(--green);"></div></div>
+        </div>
+        <div class="funnel-metric" style="color: var(--green);">120 WAU (30%)</div>
+      </div>
+      <div class="funnel-row">
+        <div class="funnel-stage" style="color: var(--accent);">Referral</div>
+        <div>
+          <div class="funnel-desc">Shareable score badges — product-embedded viral loop (PLG mechanism)</div>
+          <div class="bar-wrap"><div class="bar-fill" style="width: 15%; background: var(--accent);"></div></div>
+        </div>
+        <div class="funnel-metric" style="color: var(--accent);">60 referrals (15%)</div>
+      </div>
+    </div>
+    <div class="reasoning" style="margin-top: 24px;">
+      <div class="reasoning-tag">My Reasoning</div>
+      <h3>Why I'd invest in the referral loop before scaling paid</h3>
+      <p>At a ₹50 target CAC, paid acquisition is viable — but referral users have zero CAC and higher activation rates (they arrive already understanding the product through a peer's score). I'd aim to get the referral loop working and measurable before increasing ad spend. A 15% referral rate compounds fast at scale.</p>
+    </div>
+  </section>
+
+  <!-- A/B TEST -->
+  <section>
+    <div class="section-tag">Experimentation</div>
+    <h2>A/B test — landing page headline</h2>
+    <p style="margin-bottom: 24px;">The single highest-impact experiment: testing how headline framing affects conversion. Fear-of-loss vs. speed-of-outcome messaging.</p>
+    <div class="ab-grid">
+      <div class="ab-card">
+        <div class="ab-label">Version A — Control</div>
+        <div class="ab-headline">"Validate your idea in minutes"</div>
+        <div class="ab-stat" style="color: var(--muted);">~10% CVR</div>
+        <p style="font-size: 12px; margin-top: 8px;">Focuses on speed. Doesn't address what the user is afraid of — wasting time building the wrong thing.</p>
+      </div>
+      <div class="ab-card winner">
+        <div class="ab-badge">Hypothesis Winner</div>
+        <div class="ab-label">Version B — Challenger</div>
+        <div class="ab-headline">"Test your startup idea before you build"</div>
+        <div class="ab-stat" style="color: var(--green);">~18% CVR</div>
+        <p style="font-size: 12px; margin-top: 8px;">Speaks directly to the fear of wasted effort. "Before you build" is the exact moment of anxiety for the target user.</p>
+      </div>
+    </div>
+    <div class="impact-row">
+      <div class="impact-cell">
+        <div class="impact-label" style="color: #DC2626;">Problem</div>
+        <div class="impact-text">Low landing page CVR (~10%)</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-label" style="color: var(--gold);">Action</div>
+        <div class="impact-text">Reframe headline around fear, not speed + social proof repositioned</div>
+      </div>
+      <div class="impact-cell">
+        <div class="impact-label" style="color: var(--green);">Expected Impact</div>
+        <div class="impact-text">CVR uplift: 10% → 18% (+80 signups per 1,000 visitors)</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EMAIL -->
+  <section>
+    <div class="section-tag">Retention — Email & CRM</div>
+    <h2>Trigger-based email sequences (HubSpot)</h2>
+    <p style="margin-bottom: 24px;">Three emails cover the full post-signup lifecycle. Each is triggered by user behaviour — not a fixed schedule — because contextual relevance beats volume.</p>
+    <div>
+      <div class="email-card">
+        <div class="email-header"><strong>Email 1 — Welcome (sent immediately on signup)</strong><br>Subject: Welcome to Sparq 🚀</div>
+        <div class="email-body">Drive the user to their first idea submission — the activation event. Short, action-oriented. "Start by submitting your first idea and get instant feedback from the community."</div>
+      </div>
+      <div class="email-card">
+        <div class="email-header"><strong>Email 2 — Engagement (triggered when ratings received)</strong><br>Subject: Your idea is getting attention 👀</div>
+        <div class="email-body">Activity-triggered — sent when the user receives their first score. Creates a "notification pull" that brings them back at peak emotional interest. Anchors them to their score, encouraging them to return, improve, and compare.</div>
+      </div>
+      <div class="email-card">
+        <div class="email-header"><strong>Email 3 — Retention (weekly, every Monday)</strong><br>Subject: This week's top ideas 🔥</div>
+        <div class="email-body">Creates a weekly habit loop around the leaderboard. Competitive positioning motivates users to re-submit, rate others, and chase rankings. The leaderboard mechanic turns retention into a game.</div>
+      </div>
+    </div>
+    <div class="reasoning">
+      <div class="reasoning-tag">My Reasoning</div>
+      <h3>Why trigger-based beats scheduled email</h3>
+      <p>Email 2 is the most important email in this sequence. Sending it when a user receives a rating — not on day 3 of a drip — means the email arrives when the user is most emotionally invested. Scheduled sequences optimise for the marketer's calendar. Trigger-based sequences optimise for the user's moment of peak intent. I'd expect Email 2 to drive 2–3× higher open rates than a scheduled equivalent.</p>
+    </div>
+  </section>
+
+  <!-- SEO -->
+  <section>
+    <div class="section-tag">Organic Acquisition</div>
+    <h2>SEO + content strategy</h2>
+    <div class="two-col">
+      <div>
+        <h3 style="margin-bottom: 12px;">Target Keywords</h3>
+        <div class="kw-list" style="margin-bottom: 20px;">
+          <span class="kw">startup idea validation</span>
+          <span class="kw">rate my business idea</span>
+          <span class="kw">validate startup idea</span>
+          <span class="kw">startup feedback platform</span>
+          <span class="kw">idea evaluation tool</span>
+        </div>
+        <p style="font-size: 13px;">These keywords capture high commercial intent — users actively searching for validation have demonstrated urgency. They're the most efficient acquisition segment because intent is pre-qualified before the click.</p>
+      </div>
+      <div>
+        <div class="card" style="margin-bottom: 12px;">
+          <h3>Top startup ideas in 2026</h3>
+          <p style="font-size: 13px;">Intercepts users at the research stage — before they've committed to an idea. Captures them early in the founder journey.</p>
+        </div>
+        <div class="card">
+          <h3>How to validate your startup idea quickly</h3>
+          <p style="font-size: 13px;">Pure bottom-of-funnel intent. User is already sold on the need — the article becomes the bridge to the platform.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METRICS & TOOLS -->
+  <section>
+    <div class="section-tag">Metrics & Stack</div>
+    <h2>KPIs and growth stack</h2>
+    <div class="metrics-grid" style="margin-bottom: 32px;">
+      <div class="metric-tile"><div class="v">50%+</div><div class="l">Activation rate target</div></div>
+      <div class="metric-tile"><div class="v">30%</div><div class="l">Weekly retention target</div></div>
+      <div class="metric-tile"><div class="v">₹50</div><div class="l">Target CAC</div></div>
+      <div class="metric-tile"><div class="v">15%+</div><div class="l">Referral rate target</div></div>
+    </div>
+    <div class="tool-grid">
+      <div class="tool-card"><div class="tool-name">Google Analytics 4</div><div class="tool-use">User behaviour & funnel tracking</div></div>
+      <div class="tool-card"><div class="tool-name">HubSpot</div><div class="tool-use">Email automation & segmentation</div></div>
+      <div class="tool-card"><div class="tool-name">Meta Ads Manager</div><div class="tool-use">Paid acquisition & audience targeting</div></div>
+      <div class="tool-card"><div class="tool-name">Google Search Console</div><div class="tool-use">SEO performance & keyword monitoring</div></div>
+    </div>
+  </section>
+
+  <!-- KEY LEARNINGS -->
+  <section>
+    <div class="section-tag">Key Learnings</div>
+    <h2>What I'd do differently and what I learned</h2>
+    <div class="three-col">
+      <div class="learning-card">
+        <div class="learning-num">01</div>
+        <h3>Fix activation before scaling acquisition</h3>
+        <p style="font-size: 13px;">Doubling traffic at a broken activation rate wastes budget. I'd spend the first month on reducing friction at idea submission before increasing ad spend.</p>
+      </div>
+      <div class="learning-card">
+        <div class="learning-num">02</div>
+        <h3>Referral loops are product decisions, not marketing ones</h3>
+        <p style="font-size: 13px;">The shareable score badge only works because it's embedded in the product moment of highest emotion. Referral programs that live in a "Refer a Friend" settings tab never perform as well.</p>
+      </div>
+      <div class="learning-card">
+        <div class="learning-num">03</div>
+        <h3>Email timing matters more than copy</h3>
+        <p style="font-size: 13px;">A perfectly written email sent at the wrong moment is ignored. An average email sent when a user just received their first score will be opened. Trigger logic is the highest-leverage email optimisation.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="footer">
+  <div class="footer-brand">Sparq — Growth Case Study</div>
+  <div class="footer-meta">Strategic design project &nbsp;·&nbsp; 2026 &nbsp;·&nbsp; Metrics are modeled projections</div>
+</div>
+
+</body>
+</html>
